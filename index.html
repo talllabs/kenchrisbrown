@@ -2,113 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>KC Brown – Storyteller</title>
+<title>KC Brown — Storyteller</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- GOOGLE FONT (AGENCY STYLE) -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
+  :root {
+    --bg: #ffffff;
+    --text: #2b2b2b;
+    --muted: #6b6b6b;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #111;
-    color: #fff;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+    font-weight: 400;
   }
 
   /* HEADER */
   header {
-    padding: 24px 32px;
+    padding: 32px 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
   }
 
-  .logo {
-    font-size: 20px;
-    letter-spacing: 2px;
-    font-weight: 600;
+  .brand {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
   }
 
-  .tagline {
+  .brand span {
+    display: block;
     font-size: 12px;
-    opacity: 0.7;
-    margin-top: 4px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
   }
 
   nav a {
-    color: #fff;
+    margin-left: 28px;
     text-decoration: none;
-    margin-left: 24px;
-    font-size: 14px;
-    opacity: 0.8;
+    color: var(--text);
+    font-size: 13px;
+    letter-spacing: 1px;
   }
 
   nav a:hover {
-    opacity: 1;
+    opacity: 0.6;
   }
 
   /* SECTIONS */
   section {
-    padding: 60px 32px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 80px 40px;
   }
 
   h2 {
-    font-size: 22px;
-    margin-bottom: 32px;
+    font-size: 18px;
+    font-weight: 500;
     letter-spacing: 1px;
+    margin-bottom: 48px;
   }
 
   /* VIDEO GRID */
   .video-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 60px;
   }
 
-  .video-item {
-    background: #000;
-  }
-
-  .video-wrapper {
-    position: relative;
-    padding-top: 56.25%;
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    inset: 0;
+  .video-item iframe {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
     border: none;
-  }
-
-  .video-meta {
-    padding: 14px 0;
   }
 
   .video-title {
     font-size: 14px;
-    margin-bottom: 6px;
+    margin-top: 12px;
+    font-weight: 500;
   }
 
   .video-caption {
     font-size: 12px;
-    opacity: 0.7;
+    color: var(--muted);
+    margin-top: 6px;
     line-height: 1.5;
   }
 
-  /* PLACEHOLDER */
-  .placeholder {
-    font-size: 14px;
-    opacity: 0.6;
+  /* PHOTO GRID */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
   }
 
   /* FOOTER */
   footer {
-    padding: 40px 32px;
+    padding: 60px 40px;
     text-align: center;
     font-size: 12px;
-    opacity: 0.5;
+    color: var(--muted);
   }
 </style>
 </head>
@@ -116,9 +128,9 @@
 <body>
 
 <header>
-  <div>
-    <div class="logo">KC BROWN</div>
-    <div class="tagline">Storyteller</div>
+  <div class="brand">
+    KC BROWN
+    <span>Storyteller</span>
   </div>
   <nav>
     <a href="#portfolio">Portfolio</a>
@@ -128,103 +140,81 @@
   </nav>
 </header>
 
-<!-- VIDEO PORTFOLIO -->
+<!-- VIDEO -->
 <section id="video">
   <h2>Video</h2>
 
   <div class="video-grid">
 
-    <!-- CAMP TOMS -->
     <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/85489219?title=0&byline=0&portrait=0"
-          allowfullscreen></iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-title">Camp TOMS</div>
-        <div class="video-caption">A behind-the-scenes look at Camp TOMS, celebrating community and social impact.</div>
-      </div>
+      <iframe src="https://player.vimeo.com/video/85489219?title=0&byline=0&portrait=0" allowfullscreen></iframe>
+      <div class="video-title">Camp TOMS</div>
+      <div class="video-caption">Community, creativity, and social impact behind the scenes.</div>
     </div>
 
-    <!-- APPLE WATCH BAND -->
     <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/196013297?title=0&byline=0&portrait=0"
-          allowfullscreen></iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-title">Apple Watch Band</div>
-        <div class="video-caption">A clean product film highlighting design, lifestyle, and everyday use.</div>
-      </div>
+      <iframe src="https://player.vimeo.com/video/196013297?title=0&byline=0&portrait=0" allowfullscreen></iframe>
+      <div class="video-title">Apple Watch Band</div>
+      <div class="video-caption">A clean, lifestyle-driven product story.</div>
     </div>
 
-    <!-- MAGIC BUS -->
     <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/866610422?title=0&byline=0&portrait=0"
-          allowfullscreen></iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-title">Magic Bus</div>
-        <div class="video-caption">Spent a few days in Hyderabad with an organization doing powerful work for local communities.</div>
-      </div>
+      <iframe src="https://player.vimeo.com/video/866610422?title=0&byline=0&portrait=0" allowfullscreen></iframe>
+      <div class="video-title">Magic Bus</div>
+      <div class="video-caption">Documenting powerful community work in Hyderabad.</div>
     </div>
 
-    <!-- SOUTH SHORE -->
     <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/293608639?title=0&byline=0&portrait=0"
-          allowfullscreen></iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-title">South Shore Drill Team – Jashon</div>
-        <div class="video-caption">An intimate portrait of discipline, pride, and mentorship.</div>
-      </div>
+      <iframe src="https://player.vimeo.com/video/293608639?title=0&byline=0&portrait=0" allowfullscreen></iframe>
+      <div class="video-title">South Shore Drill Team – Jashon</div>
+      <div class="video-caption">Portrait of discipline, pride, and mentorship.</div>
     </div>
-
-    <!-- SIDE CHEF -->
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/146186425?title=0&byline=0&portrait=0"
-          allowfullscreen></iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-title">SideChef – Step Into The Kitchen</div>
-        <div class="video-caption">Introducing a guided, accessible approach to cooking at home.</div>
-      </div>
-    </div>
-
-    <!-- MADEFOR -->
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/508261807?title=0&byline=0&portrait=0"
-          allowfullscreen></iframe>
-      </div>
-      <div class="video-meta">
-        <div class="video-title">Madefor – Why It Works</div>
-        <div class="video-caption">Exploring the science and philosophy behind habit-based wellness.</div>
-      </div>
-    </div>
-
-    <!-- ADD MORE VIDEOS HERE USING SAME PATTERN -->
 
   </div>
 </section>
 
-<!-- PHOTO PLACEHOLDER -->
+<!-- PHOTO -->
 <section id="photo">
   <h2>Photo</h2>
-  <div class="placeholder">
-    Photo portfolio coming soon.
+
+  <div class="photo-grid">
+    <img src="/Image/KCBrown-Photo-001.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-002.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-003.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-004.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-005.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-006.jpeg" alt="">
+    <img src="/Image/KCBrown-Photo-007.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-008.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-009.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-010.jpeg" alt="">
+    <img src="/Image/KCBrown-Photo-011.jpeg" alt="">
+    <img src="/Image/KCBrown-Photo-012.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-013.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-014.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-015.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-016.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-017.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-018.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-019.jpeg" alt="">
+    <img src="/Image/KCBrown-Photo-020.jpeg" alt="">
+    <img src="/Image/KCBrown-Photo-021.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-022.jpeg" alt="">
+    <img src="/Image/KCBrown-Photo-023.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-024.jpeg" alt="">
+    <img src="/Image/KCBrown-Photo-025.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-026.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-027.jpg" alt="">
+    <img src="/Image/KCBrown-Photo-028.jpeg" alt="">
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
-  <div class="placeholder">
-    For inquiries, collaborations, or bookings, please reach out directly.
-  </div>
+  <p style="font-size:14px;color:var(--muted);max-width:600px;">
+    For collaborations, commissions, or general inquiries, please get in touch.
+  </p>
 </section>
 
 <footer>
