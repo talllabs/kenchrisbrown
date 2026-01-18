@@ -1,129 +1,275 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>KC Brown – Video Work</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KC Brown – Storyteller</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    margin: 0;
-    background: #111;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-  }
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #fff;
+  color: #2b2b2b;
+}
 
-  .carousel {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
+a { text-decoration: none; color: inherit; }
 
-  .player {
-    position: relative;
-    padding-top: 56.25%;
-    background: #000;
-  }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
 
-  .player iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+.nav {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .thumbs {
-    display: flex;
-    gap: 12px;
-    margin-top: 14px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-  }
+.logo {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+}
 
-  .thumb {
-    flex: 0 0 auto;
-    width: 120px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.2s ease;
-    border: 2px solid transparent;
-  }
+.logo span {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  font-weight: 400;
+}
 
-  .thumb.active {
-    opacity: 1;
-    border-color: #fff;
-  }
+nav a {
+  margin-left: 24px;
+  font-size: 14px;
+}
 
-  .thumb img {
-    width: 100%;
-    display: block;
-  }
+section {
+  max-width: 1400px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+h2 {
+  font-family: Montserrat, sans-serif;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+/* ===== PORTFOLIO SLIDESHOW ===== */
+.portfolio-player iframe {
+  width: 100%;
+  height: 460px;
+  border: none;
+}
+
+.portfolio-meta {
+  margin-top: 12px;
+}
+
+.portfolio-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.portfolio-thumb {
+  cursor: pointer;
+  font-size: 12px;
+  color: #777;
+}
+
+.portfolio-thumb:hover {
+  color: #000;
+}
+
+/* VIDEO GRID */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+}
+
+.video iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+
+.video-title {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.video-caption {
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* PHOTO MOSAIC */
+.photo-grid {
+  column-count: 4;
+  column-gap: 24px;
+}
+
+.photo-grid img {
+  width: 100%;
+  display: block;
+  margin-bottom: 24px;
+  cursor: pointer;
+  break-inside: avoid;
+}
+
+@media (max-width: 1200px) { .photo-grid { column-count: 3; } }
+@media (max-width: 900px) { .photo-grid { column-count: 2; } }
+@media (max-width: 600px) { .photo-grid { column-count: 1; } }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* CONTACT */
+.contact {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+}
+
+.contact img { width: 100%; }
+
+@media (max-width: 800px) {
+  .contact { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 
-<body>
+<body id="top">
 
-<div class="carousel">
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">KC BROWN<span>Storyteller</span></a>
+    <nav>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#video">More Video Work Samples</a>
+      <a href="#photo">Photo</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- MAIN PLAYER -->
-  <div class="player">
-    <iframe
-      id="vimeoPlayer"
-      src="https://player.vimeo.com/video/85489219?title=0&byline=0&portrait=0&controls=1"
-      allow="autoplay; fullscreen; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+<!-- ===== PORTFOLIO SLIDESHOW ===== -->
+<section id="portfolio">
+  <h2>Portfolio</h2>
+
+  <div class="portfolio-player">
+    <iframe id="portfolioFrame"
+      src="https://player.vimeo.com/video/85489219?title=0&byline=0&portrait=0"></iframe>
+
+    <div class="portfolio-meta">
+      <div class="video-title" id="portfolioTitle">Camp TOMS</div>
+      <div class="video-caption" id="portfolioCaption">
+        A documentary look at TOMS’ mission-driven summer camp empowering youth through creativity and service.
+      </div>
+    </div>
   </div>
 
-  <!-- THUMBNAILS -->
-  <div class="thumbs" id="thumbs">
+  <div class="portfolio-thumbs">
+    <div class="portfolio-thumb" onclick="setPortfolio(85489219,'Camp TOMS','A documentary look at TOMS’ mission-driven summer camp empowering youth through creativity and service.')">Camp TOMS</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(354113974,'Giving Manifesto','A brand manifesto film articulating purpose, values, and long-term social impact.')">Giving Manifesto</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(430135095,'Ants Ants Ants – Every Little Color','A playful, visually driven piece celebrating creativity through movement and color.')">Ants Ants Ants</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(293608639,'South Shore Drill Team','An energetic portrait of discipline, pride, and performance within a legendary youth team.')">South Shore Drill Team</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(256491859,'The Venice Collection','A fashion-forward lifestyle film capturing craftsmanship and coastal style.')">The Venice Collection</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(257223094,'Clare V','A brand film highlighting effortless design, personality, and modern femininity.')">Clare V</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(119200524,'Star Wars x TOMS','A limited-edition collaboration film blending pop culture with purpose-driven branding.')">Star Wars x TOMS</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(232832117,'Animal Act','A stylized narrative exploring human connection through unexpected characters.')">Animal Act</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(354114160,'Pit Stop','A short-form story about momentum, resilience, and resetting perspective.')">Pit Stop</div>
+    <div class="portfolio-thumb" onclick="setPortfolio(174456782,'Shoe Box Office','A creative campaign film transforming everyday giving into cinematic impact.')">Shoe Box Office</div>
+  </div>
+</section>
 
-    <div class="thumb active" data-id="85489219">
-      <img src="https://vumbnail.com/85489219.jpg" alt="Camp TOMS">
-    </div>
+<!-- ===== MORE VIDEO WORK ===== -->
+<section id="video">
+  <h2>More Video Work Samples</h2>
 
-    <div class="thumb" data-id="196013297">
-      <img src="https://vumbnail.com/196013297.jpg" alt="Apple Watch Band">
-    </div>
+  <div class="video-grid">
 
-    <div class="thumb" data-id="866610422">
-      <img src="https://vumbnail.com/866610422.jpg" alt="Magic Bus">
-    </div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/196013297?title=0&byline=0&portrait=0"></iframe><div class="video-title">Apple Watch Band</div><div class="video-caption">A clean, product-focused film emphasizing design detail and everyday wearability.</div></div>
 
-    <div class="thumb" data-id="293608639">
-      <img src="https://vumbnail.com/293608639.jpg" alt="South Shore Drill Team">
-    </div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/866610422?title=0&byline=0&portrait=0"></iframe><div class="video-title">Magic Bus</div><div class="video-caption">A documentary short highlighting an organization creating opportunity through education and mentorship in India.</div></div>
 
-    <div class="thumb" data-id="322411122">
-      <img src="https://vumbnail.com/322411122.jpg" alt="Stand For Tomorrow">
-    </div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/293608639?title=0&byline=0&portrait=0"></iframe><div class="video-title">South Shore Drill Team – Jashon</div><div class="video-caption">An intimate profile capturing leadership, discipline, and youth empowerment.</div></div>
 
-    <div class="thumb" data-id="3744527">
-      <img src="https://vumbnail.com/3744527.jpg" alt="Spaceboy vs The House Warden">
-    </div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/146186425?title=0&byline=0&portrait=0"></iframe><div class="video-title">SideChef – Step Into The Kitchen</div><div class="video-caption">A brand story inviting users into a more confident, approachable cooking experience.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/508261807?title=0&byline=0&portrait=0"></iframe><div class="video-title">Madefor – Why It Works</div><div class="video-caption">A product narrative explaining the science and philosophy behind habit-building.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/258905646?title=0&byline=0&portrait=0"></iframe><div class="video-title">TRVL LITE</div><div class="video-caption">A travel-forward lifestyle film focused on simplicity, mobility, and design.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/293605988?title=0&byline=0&portrait=0"></iframe><div class="video-title">Rodney Lucas for TRVL LITE</div><div class="video-caption">An athlete-led story exploring purpose, perseverance, and personal journey.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/354114238?title=0&byline=0&portrait=0"></iframe><div class="video-title">Roll N Peace</div><div class="video-caption">A community-driven piece celebrating creativity, culture, and positive change.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/322411122?title=0&byline=0&portrait=0"></iframe><div class="video-title">Stand For Tomorrow</div><div class="video-caption">A message-driven film encouraging action toward a more responsible future.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/90921291?title=0&byline=0&portrait=0"></iframe><div class="video-title">shuberX</div><div class="video-caption">A playful brand piece blending humor, motion, and unexpected storytelling.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/85491292?title=0&byline=0&portrait=0"></iframe><div class="video-title">Your Next Big Step</div><div class="video-caption">An inspirational short about growth, transition, and embracing change.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/174457691?title=0&byline=0&portrait=0"></iframe><div class="video-title">Spring / Summer Lifestyle</div><div class="video-caption">A seasonal lifestyle film capturing warmth, movement, and everyday moments.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/85491656?title=0&byline=0&portrait=0"></iframe><div class="video-title">Movember 2013</div><div class="video-caption">A campaign film raising awareness around men’s health through story and humor.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/136686992?title=0&byline=0&portrait=0"></iframe><div class="video-title">Every Mother Counts</div><div class="video-caption">A human-centered documentary supporting maternal health worldwide.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/119200524?title=0&byline=0&portrait=0"></iframe><div class="video-title">TOMS Holiday Cheer</div><div class="video-caption">A festive campaign celebrating generosity, community, and giving.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/86629417?title=0&byline=0&portrait=0"></iframe><div class="video-title">TOMS Internship Program</div><div class="video-caption">A behind-the-scenes look at mentorship and creative growth.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/87644824?title=0&byline=0&portrait=0"></iframe><div class="video-title">Ben Affleck & ECI</div><div class="video-caption">A cause-driven piece highlighting advocacy and global humanitarian work.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/174458983?title=0&byline=0&portrait=0"></iframe><div class="video-title">Stand Up</div><div class="video-caption">A concise narrative about finding voice and standing for something bigger.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/87743879?title=0&byline=0&portrait=0"></iframe><div class="video-title">Virtual Try On</div><div class="video-caption">A tech-forward demo showcasing digital interaction and user experience.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/87946399?title=0&byline=0&portrait=0"></iframe><div class="video-title">Corporate International Incorporated</div><div class="video-caption">A corporate brand film focused on scale, trust, and global operations.</div></div>
+
+    <div class="video"><iframe src="https://player.vimeo.com/video/3744527?title=0&byline=0&portrait=0"></iframe><div class="video-title">Spaceboy vs The House Warden</div><div class="video-caption">A short narrative film blending imagination, humor, and character-driven storytelling.</div></div>
 
   </div>
+</section>
 
-</div>
+<!-- PHOTO + CONTACT SECTIONS REMAIN UNCHANGED -->
 
 <script>
-  const player = document.getElementById("vimeoPlayer");
-  const thumbs = document.querySelectorAll(".thumb");
-
-  thumbs.forEach(thumb => {
-    thumb.addEventListener("click", () => {
-      const id = thumb.dataset.id;
-
-      player.src =
-        "https://player.vimeo.com/video/" +
-        id +
-        "?title=0&byline=0&portrait=0&controls=1&autoplay=1";
-
-      thumbs.forEach(t => t.classList.remove("active"));
-      thumb.classList.add("active");
-    });
-  });
+function setPortfolio(id,title,caption){
+  document.getElementById('portfolioFrame').src =
+    'https://player.vimeo.com/video/'+id+'?title=0&byline=0&portrait=0';
+  document.getElementById('portfolioTitle').innerText = title;
+  document.getElementById('portfolioCaption').innerText = caption;
+}
 </script>
 
 </body>
