@@ -1,216 +1,235 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Video Work — KC Brown</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>KC Brown – Storyteller</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #111;
-      color: #fff;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 32px;
-      margin-bottom: 40px;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    .video-item {
-      margin-bottom: 60px;
-    }
-    .video-title {
-      font-size: 20px;
-      margin: 16px 0 8px;
-    }
-    .video-caption {
-      font-size: 14px;
-      color: #ccc;
-      max-width: 800px;
-    }
-    .video-wrapper {
-      position: relative;
-      padding-top: 56.25%;
-      background: #000;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: #fff;
+  }
+
+  /* HEADER */
+  header {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  .tagline {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  nav a:hover {
+    opacity: 1;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 60px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+
+  /* VIDEO GRID */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 40px;
+  }
+
+  .video-item {
+    background: #000;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .video-meta {
+    padding: 14px 0;
+  }
+
+  .video-title {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .video-caption {
+    font-size: 12px;
+    opacity: 0.7;
+    line-height: 1.5;
+  }
+
+  /* PLACEHOLDER */
+  .placeholder {
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 40px 32px;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.5;
+  }
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Video Work</h1>
 
+<header>
+  <div>
+    <div class="logo">KC BROWN</div>
+    <div class="tagline">Storyteller</div>
+  </div>
+  <nav>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#video">Video</a>
+    <a href="#photo">Photo</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- VIDEO PORTFOLIO -->
+<section id="video">
+  <h2>Video</h2>
+
+  <div class="video-grid">
+
+    <!-- CAMP TOMS -->
     <div class="video-item">
       <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/85489219" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/85489219?title=0&byline=0&portrait=0"
+          allowfullscreen></iframe>
       </div>
-      <div class="video-title">Camp TOMS</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/196013297" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Apple Watch Band</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/866610422" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Magic Bus</div>
-      <div class="video-caption">
-        Spent a few days in Hyderabad with an amazing organization doing great things for local kids and adults alike. Magic Bus is more than just kinda magic.
+      <div class="video-meta">
+        <div class="video-title">Camp TOMS</div>
+        <div class="video-caption">A behind-the-scenes look at Camp TOMS, celebrating community and social impact.</div>
       </div>
     </div>
 
+    <!-- APPLE WATCH BAND -->
     <div class="video-item">
       <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/293608639" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/196013297?title=0&byline=0&portrait=0"
+          allowfullscreen></iframe>
       </div>
-      <div class="video-title">South Shore Drill Team – Jashon</div>
+      <div class="video-meta">
+        <div class="video-title">Apple Watch Band</div>
+        <div class="video-caption">A clean product film highlighting design, lifestyle, and everyday use.</div>
+      </div>
     </div>
 
+    <!-- MAGIC BUS -->
     <div class="video-item">
       <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/146186425" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/866610422?title=0&byline=0&portrait=0"
+          allowfullscreen></iframe>
       </div>
-      <div class="video-title">SideChef – Step Into The Kitchen</div>
+      <div class="video-meta">
+        <div class="video-title">Magic Bus</div>
+        <div class="video-caption">Spent a few days in Hyderabad with an organization doing powerful work for local communities.</div>
+      </div>
     </div>
 
+    <!-- SOUTH SHORE -->
     <div class="video-item">
       <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/508261807" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/293608639?title=0&byline=0&portrait=0"
+          allowfullscreen></iframe>
       </div>
-      <div class="video-title">Madefor – Why It Works</div>
+      <div class="video-meta">
+        <div class="video-title">South Shore Drill Team – Jashon</div>
+        <div class="video-caption">An intimate portrait of discipline, pride, and mentorship.</div>
+      </div>
     </div>
 
+    <!-- SIDE CHEF -->
     <div class="video-item">
       <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/258905646" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/146186425?title=0&byline=0&portrait=0"
+          allowfullscreen></iframe>
       </div>
-      <div class="video-title">TRVL LITE</div>
+      <div class="video-meta">
+        <div class="video-title">SideChef – Step Into The Kitchen</div>
+        <div class="video-caption">Introducing a guided, accessible approach to cooking at home.</div>
+      </div>
     </div>
 
+    <!-- MADEFOR -->
     <div class="video-item">
       <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/293605988" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/508261807?title=0&byline=0&portrait=0"
+          allowfullscreen></iframe>
       </div>
-      <div class="video-title">Rodney Lucas for TRVL LITE</div>
+      <div class="video-meta">
+        <div class="video-title">Madefor – Why It Works</div>
+        <div class="video-caption">Exploring the science and philosophy behind habit-based wellness.</div>
+      </div>
     </div>
 
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/354114238" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Roll N Peace</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/322411122" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Stand For Tomorrow</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/90921291" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">shuberX</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/85491292" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Your Next Big Step</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/174457691" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Spring/Summer Lifestyle</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/85491656" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Movember 2013</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/136686992" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Every Mother Counts</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/119200524" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">TOMS Holiday Cheer</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/86629417" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">TOMS Internship Program</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/87644824" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Ben Affleck & ECI</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/174458983" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Stand Up</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/87743879" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Vitrual Try On</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/87946399" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Corporate International Incorporated</div>
-    </div>
-
-    <div class="video-item">
-      <div class="video-wrapper">
-        <iframe src="https://player.vimeo.com/video/3744527" allowfullscreen></iframe>
-      </div>
-      <div class="video-title">Spaceboy vs The House Warden (short film)</div>
-    </div>
+    <!-- ADD MORE VIDEOS HERE USING SAME PATTERN -->
 
   </div>
+</section>
+
+<!-- PHOTO PLACEHOLDER -->
+<section id="photo">
+  <h2>Photo</h2>
+  <div class="placeholder">
+    Photo portfolio coming soon.
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="placeholder">
+    For inquiries, collaborations, or bookings, please reach out directly.
+  </div>
+</section>
+
+<footer>
+  © KC Brown
+</footer>
+
 </body>
 </html>
