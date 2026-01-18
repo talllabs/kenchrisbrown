@@ -5,46 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KC Brown – Storyteller</title>
 
-<!-- Proxima Nova (Adobe fallback) -->
 <style>
 @font-face {
   font-family: "Proxima Nova";
   src: local("Proxima Nova"), local("ProximaNova-Regular");
 }
+
+/* BASE */
 body {
   margin: 0;
   font-family: "Proxima Nova", -apple-system, BlinkMacSystemFont, sans-serif;
   color: #222;
   background: #fff;
 }
-
 a { text-decoration: none; color: inherit; }
 
 /* HEADER */
 header {
   position: sticky;
   top: 0;
-  background: #fff;
   z-index: 1000;
+  background: #fff;
   border-bottom: 1px solid #eee;
 }
 .nav {
   max-width: 1400px;
   margin: auto;
-  padding: 18px 20px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+/* LOGO – 2× BIGGER */
 .logo a {
+  font-size: 40px;
   font-weight: 700;
-  font-size: 20px;
+  line-height: 1;
 }
 .logo span {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   color: #777;
+  margin-top: 4px;
 }
+
+/* NAV */
 nav a {
   margin-left: 24px;
   font-size: 14px;
@@ -58,14 +64,16 @@ section {
 }
 h2 {
   font-size: 26px;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
-/* PORTFOLIO SLIDESHOW */
+/* =======================
+   PORTFOLIO
+======================= */
 .portfolio {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 30px;
+  gap: 24px;
 }
 .portfolio-main iframe {
   width: 100%;
@@ -76,31 +84,51 @@ h2 {
   margin: 12px 0 6px;
 }
 .portfolio-caption p {
-  color: #666;
   font-size: 14px;
+  color: #666;
 }
 
+/* THUMBNAILS – REDUCED SPACING */
 .portfolio-thumbs {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 8px;               /* 👈 tightened */
 }
 .thumb {
-  cursor: pointer;
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
+  cursor: pointer;
 }
 .thumb img {
-  width: 90px;
+  width: 88px;
   height: 50px;
   object-fit: cover;
 }
 .thumb span {
   font-size: 13px;
+  line-height: 1.2;
 }
 
-/* VIDEO GRID */
+/* =======================
+   VIDEO
+======================= */
+.filters {
+  margin-bottom: 24px;
+}
+.filters button {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 8px 14px;
+  margin-right: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.filters button.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -120,7 +148,9 @@ h2 {
   color: #666;
 }
 
-/* PHOTO MOSAIC */
+/* =======================
+   PHOTO MOSAIC
+======================= */
 .photo-grid {
   column-count: 4;
   column-gap: 20px;
@@ -129,10 +159,6 @@ h2 {
   width: 100%;
   margin-bottom: 20px;
   cursor: pointer;
-}
-@media (max-width: 900px) {
-  .portfolio { grid-template-columns: 1fr; }
-  .photo-grid { column-count: 2; }
 }
 
 /* LIGHTBOX */
@@ -156,6 +182,15 @@ h2 {
   gap: 40px;
 }
 .contact img { width: 100%; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .portfolio { grid-template-columns: 1fr; }
+  .photo-grid { column-count: 2; }
+}
+@media (max-width: 600px) {
+  .photo-grid { column-count: 1; }
+}
 </style>
 </head>
 
@@ -176,15 +211,15 @@ h2 {
   </div>
 </header>
 
-<!-- PORTFOLIO -->
+<!-- =======================
+     PORTFOLIO
+======================= -->
 <section id="portfolio">
 <h2>Portfolio</h2>
 
 <div class="portfolio">
   <div>
-    <div class="portfolio-main">
-      <iframe id="portfolioPlayer" src="https://player.vimeo.com/video/85489219"></iframe>
-    </div>
+    <iframe id="portfolioPlayer" src="https://player.vimeo.com/video/85489219"></iframe>
     <div class="portfolio-caption">
       <h3 id="portfolioTitle">Camp TOMS</h3>
       <p id="portfolioDesc">
@@ -194,20 +229,11 @@ h2 {
   </div>
 
   <div class="portfolio-thumbs">
-    <div class="thumb" onclick="loadPortfolio('https://player.vimeo.com/video/354113974','Giving Manifesto','A brand manifesto film articulating purpose through bold visual storytelling.')">
+    <div class="thumb" onclick="loadPortfolio('https://player.vimeo.com/video/354113974','Giving Manifesto','A brand manifesto film articulating purpose and values.')">
       <img src="https://vumbnail.com/354113974.jpg"><span>Giving Manifesto</span>
     </div>
-    <div class="thumb" onclick="loadPortfolio('https://player.vimeo.com/video/430135095','Ants Ants Ants','A vibrant music-driven visual celebrating playful creativity.')">
-      <img src="https://vumbnail.com/430135095.jpg"><span>Ants Ants Ants</span>
-    </div>
-    <div class="thumb" onclick="loadPortfolio('https://player.vimeo.com/video/293608639','South Shore Drill Team','Portrait of discipline, pride, and legacy through youth performance.')">
+    <div class="thumb" onclick="loadPortfolio('https://player.vimeo.com/video/293608639','South Shore Drill Team','A documentary portrait of discipline, pride, and youth culture.')">
       <img src="https://vumbnail.com/293608639.jpg"><span>South Shore Drill Team</span>
-    </div>
-    <div class="thumb" onclick="loadPortfolio('https://player.vimeo.com/video/256491859','The Venice Collection','A fashion-forward lifestyle piece grounded in texture and movement.')">
-      <img src="https://vumbnail.com/256491859.jpg"><span>The Venice Collection</span>
-    </div>
-    <div class="thumb" onclick="loadPortfolio('https://player.vimeo.com/video/257223094','Clare V','A playful brand portrait blending Parisian charm and modern style.')">
-      <img src="https://vumbnail.com/257223094.jpg"><span>Clare V</span>
     </div>
     <div class="thumb" onclick="loadPortfolio('https://www.youtube.com/embed/9mFj7lTnLpU','Star Wars x TOMS','A limited-edition collaboration celebrating fandom and purpose.')">
       <img src="https://img.youtube.com/vi/9mFj7lTnLpU/hqdefault.jpg"><span>Star Wars x TOMS</span>
@@ -216,46 +242,102 @@ h2 {
 </div>
 </section>
 
-<!-- VIDEO -->
+<!-- =======================
+     VIDEO (ALL INCLUDED)
+======================= -->
 <section id="video">
 <h2>Video</h2>
 
+<div class="filters">
+  <button class="active" onclick="filterVideos('all',this)">All</button>
+  <button onclick="filterVideos('brand',this)">Brand</button>
+  <button onclick="filterVideos('doc',this)">Documentary</button>
+  <button onclick="filterVideos('short',this)">Short Film</button>
+</div>
+
 <div class="video-grid">
-  <div class="video"><iframe src="https://player.vimeo.com/video/196013297"></iframe><div class="video-title">Apple Watch Band</div><div class="video-caption">A minimalist product film focused on form, function, and lifestyle.</div></div>
-  <div class="video"><iframe src="https://player.vimeo.com/video/866610422"></iframe><div class="video-title">Magic Bus</div><div class="video-caption">A portrait of an organization empowering youth through opportunity in India.</div></div>
-  <div class="video"><iframe src="https://player.vimeo.com/video/146186425"></iframe><div class="video-title">SideChef</div><div class="video-caption">A kinetic brand film inviting users into the kitchen experience.</div></div>
-  <div class="video"><iframe src="https://player.vimeo.com/video/508261807"></iframe><div class="video-title">Madefor</div><div class="video-caption">A science-backed look at habit formation and personal growth.</div></div>
-  <div class="video"><iframe src="https://player.vimeo.com/video/258905646"></iframe><div class="video-title">TRVL LITE</div><div class="video-caption">A high-energy lifestyle spot built for urban mobility.</div></div>
-  <div class="video"><iframe src="https://player.vimeo.com/video/3744527"></iframe><div class="video-title">Spaceboy vs The House Warden</div><div class="video-caption">A surreal short film blending humor, heart, and imagination.</div></div>
+
+<div class="video" data-category="brand"><iframe src="https://player.vimeo.com/video/196013297"></iframe><div class="video-title">Apple Watch Band</div><div class="video-caption">A sleek product film focused on design and utility.</div></div>
+
+<div class="video" data-category="doc"><iframe src="https://player.vimeo.com/video/866610422"></iframe><div class="video-title">Magic Bus</div><div class="video-caption">A documentary portrait of an organization empowering youth in India.</div></div>
+
+<div class="video" data-category="brand"><iframe src="https://player.vimeo.com/video/146186425"></iframe><div class="video-title">SideChef – Step Into The Kitchen</div><div class="video-caption">A lifestyle-driven brand film celebrating confidence in cooking.</div></div>
+
+<div class="video" data-category="brand"><iframe src="https://player.vimeo.com/video/508261807"></iframe><div class="video-title">Madefor – Why It Works</div><div class="video-caption">A wellness brand story centered on routine and habit-building.</div></div>
+
+<div class="video" data-category="brand"><iframe src="https://player.vimeo.com/video/258905646"></iframe><div class="video-title">TRVL LITE</div><div class="video-caption">A performance-driven apparel film for modern travel.</div></div>
+
+<div class="video" data-category="short"><iframe src="https://player.vimeo.com/video/3744527"></iframe><div class="video-title">Spaceboy vs The House Warden</div><div class="video-caption">An early narrative short blending imagination and tension.</div></div>
+
 </div>
 </section>
 
-<!-- PHOTO -->
+<!-- =======================
+     PHOTO (001–039 RESTORED)
+======================= -->
 <section id="photo">
 <h2>Photo</h2>
 <div class="photo-grid">
-<script>
-for(let i=1;i<=39;i++){
-  document.write(`<img src="/Image/KCBrown-Photo-${String(i).padStart(3,'0')}.jpg">`);
-}
-</script>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-<div class="contact">
-  <img src="/Image/kc.png">
-  <div>
-    <p>KC Brown is a director, producer, shooter, and editor working across film, brand, and documentary.</p>
-    <p><strong>Email:</strong> kenchrisbrown@gmail.com<br>
-    <strong>Phone:</strong> +64 021 245 4101</p>
-  </div>
+<img src="/Image/KCBrown-Photo-001.jpg">
+<img src="/Image/KCBrown-Photo-002.jpg">
+<img src="/Image/KCBrown-Photo-003.jpg">
+<img src="/Image/KCBrown-Photo-004.jpg">
+<img src="/Image/KCBrown-Photo-005.jpg">
+<img src="/Image/KCBrown-Photo-006.jpeg">
+<img src="/Image/KCBrown-Photo-007.jpg">
+<img src="/Image/KCBrown-Photo-008.jpg">
+<img src="/Image/KCBrown-Photo-009.jpg">
+<img src="/Image/KCBrown-Photo-010.jpeg">
+<img src="/Image/KCBrown-Photo-011.jpeg">
+<img src="/Image/KCBrown-Photo-012.jpg">
+<img src="/Image/KCBrown-Photo-013.jpg">
+<img src="/Image/KCBrown-Photo-014.jpg">
+<img src="/Image/KCBrown-Photo-015.jpg">
+<img src="/Image/KCBrown-Photo-016.jpg">
+<img src="/Image/KCBrown-Photo-017.jpg">
+<img src="/Image/KCBrown-Photo-018.jpg">
+<img src="/Image/KCBrown-Photo-019.jpeg">
+<img src="/Image/KCBrown-Photo-020.jpeg">
+<img src="/Image/KCBrown-Photo-021.jpg">
+<img src="/Image/KCBrown-Photo-022.jpeg">
+<img src="/Image/KCBrown-Photo-023.jpg">
+<img src="/Image/KCBrown-Photo-024.jpeg">
+<img src="/Image/KCBrown-Photo-025.jpg">
+<img src="/Image/KCBrown-Photo-026.jpg">
+<img src="/Image/KCBrown-Photo-027.jpg">
+<img src="/Image/KCBrown-Photo-028.jpeg">
+<img src="/Image/KCBrown-Photo-029.jpg">
+<img src="/Image/KCBrown-Photo-030.jpg">
+<img src="/Image/KCBrown-Photo-031.jpg">
+<img src="/Image/KCBrown-Photo-032.jpg">
+<img src="/Image/KCBrown-Photo-033.jpg">
+<img src="/Image/KCBrown-Photo-034.jpg">
+<img src="/Image/KCBrown-Photo-035.jpg">
+<img src="/Image/KCBrown-Photo-036.jpg">
+<img src="/Image/KCBrown-Photo-037.jpeg">
+<img src="/Image/KCBrown-Photo-038.jpg">
+<img src="/Image/KCBrown-Photo-039.jpg">
 </div>
 </section>
 
 <div class="lightbox" id="lightbox"><img></div>
+
+<!-- =======================
+     CONTACT
+======================= -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact">
+<img src="/Image/kc.png">
+<div>
+<p>
+My name is KC Brown. I like to tell stories, mostly via pictures and moving pictures. I write, direct, produce, shoot, and edit—mostly to help people and brands show how awesome they are.
+</p>
+<p><strong>Email:</strong> kenchrisbrown@gmail.com<br>
+<strong>Phone:</strong> +64 021 245 4101</p>
+</div>
+</div>
+</section>
 
 <script>
 function loadPortfolio(src,title,desc){
@@ -263,7 +345,13 @@ function loadPortfolio(src,title,desc){
   document.getElementById('portfolioTitle').innerText = title;
   document.getElementById('portfolioDesc').innerText = desc;
 }
-
+function filterVideos(cat,btn){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.video').forEach(v=>{
+    v.style.display = (cat==='all'||v.dataset.category===cat) ? 'block' : 'none';
+  });
+}
 const lb=document.getElementById('lightbox');
 const lbImg=lb.querySelector('img');
 document.querySelectorAll('.photo-grid img').forEach(i=>{
