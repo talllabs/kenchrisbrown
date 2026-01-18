@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KC Brown – Storyteller</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg: #ffffff;
-  --text: #2b2b2b;
-  --muted: #777;
-  --accent: #000;
-  --gap: 24px;
-}
-
-* { box-sizing: border-box; }
-
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
   font-family: Inter, sans-serif;
+  background: #fff;
+  color: #2b2b2b;
 }
 
-a { color: inherit; text-decoration: none; }
+a { text-decoration: none; color: inherit; }
 
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: white;
+  background: #fff;
   border-bottom: 1px solid #eee;
 }
 
@@ -46,15 +36,15 @@ header {
 
 .logo {
   font-family: Montserrat, sans-serif;
-  font-weight: 700;
   font-size: 20px;
+  font-weight: 700;
 }
 
 .logo span {
   display: block;
   font-size: 12px;
+  color: #777;
   font-weight: 400;
-  color: var(--muted);
 }
 
 nav a {
@@ -74,51 +64,35 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* FILTERS */
-.filters {
-  margin-bottom: 30px;
-}
-.filters button {
-  margin-right: 12px;
-  padding: 8px 14px;
-  border: 1px solid #ccc;
-  background: none;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-/* VIDEO CAROUSEL */
-.video-carousel {
+/* VIDEO GRID */
+.video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: var(--gap);
+  gap: 28px;
 }
 
-.video-item iframe {
+.video iframe {
   width: 100%;
   height: 200px;
   border: none;
 }
 
-.video-meta {
+.video-title {
+  font-weight: 600;
   margin-top: 10px;
 }
 
-.video-meta strong {
-  display: block;
-  font-size: 14px;
-}
-
-.tags {
-  font-size: 11px;
-  color: var(--muted);
+.video-caption {
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
 }
 
 /* PHOTO GRID */
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: var(--gap);
+  gap: 24px;
 }
 
 .photo-grid img {
@@ -163,10 +137,7 @@ h2 {
 
 <header>
   <div class="nav">
-    <div class="logo">
-      KC BROWN
-      <span>Storyteller</span>
-    </div>
+    <div class="logo">KC BROWN<span>Storyteller</span></div>
     <nav>
       <a href="#portfolio">Portfolio</a>
       <a href="#video">Video</a>
@@ -178,52 +149,37 @@ h2 {
 
 <section id="portfolio">
   <h2>Portfolio</h2>
-  <p>Selected commercial, documentary, and narrative work.</p>
+  <p>Some of the work and play I’ve done over the last few years.</p>
 </section>
 
 <section id="video">
   <h2>Video</h2>
 
-  <div class="video-carousel">
+  <div class="video-grid">
 
     <!-- ALL VIDEOS -->
-    <!-- Example format repeated for all -->
-
-    <div class="video-item" data-cat="brand documentary">
-      <iframe src="https://player.vimeo.com/video/85489219?title=0&byline=0&portrait=0" allowfullscreen></iframe>
-      <div class="video-meta">
-        <strong>Camp TOMS</strong>
-        <div class="tags">TOMS · Brand / Documentary</div>
-      </div>
-    </div>
-
-    <div class="video-item" data-cat="brand product">
-      <iframe src="https://player.vimeo.com/video/196013297?title=0&byline=0&portrait=0" allowfullscreen></iframe>
-      <div class="video-meta">
-        <strong>Apple Watch Band</strong>
-        <div class="tags">Apple · Brand / Product</div>
-      </div>
-    </div>
-
-    <div class="video-item" data-cat="documentary nonprofit">
-      <iframe src="https://player.vimeo.com/video/866610422?title=0&byline=0&portrait=0" allowfullscreen></iframe>
-      <div class="video-meta">
-        <strong>Magic Bus</strong>
-        <div class="tags">Magic Bus · Documentary / Nonprofit</div>
-        <div class="tags">Spent a few days in Hyderabad with an amazing organization doing great things.</div>
-      </div>
-    </div>
-
-    <!-- CONTINUE – ALL VIDEOS INCLUDED -->
-    <!-- (Omitted here only for brevity explanation – your delivered file should keep all) -->
-
-    <div class="video-item">
-      <iframe src="https://player.vimeo.com/video/3744527?title=0&byline=0&portrait=0" allowfullscreen></iframe>
-      <div class="video-meta">
-        <strong>Spaceboy vs The House Warden</strong>
-        <div class="tags">Short Film · Narrative</div>
-      </div>
-    </div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/85489219?title=0&byline=0&portrait=0"></iframe><div class="video-title">Camp TOMS</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/196013297?title=0&byline=0&portrait=0"></iframe><div class="video-title">Apple Watch Band</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/866610422?title=0&byline=0&portrait=0"></iframe><div class="video-title">Magic Bus</div><div class="video-caption">Spent a few days in Hyderabad with an amazing organization doing great things for local kids and adults alike.</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/293608639?title=0&byline=0&portrait=0"></iframe><div class="video-title">South Shore Drill Team – Jashon</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/146186425?title=0&byline=0&portrait=0"></iframe><div class="video-title">SideChef – Step Into The Kitchen</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/508261807?title=0&byline=0&portrait=0"></iframe><div class="video-title">Madefor – Why It Works</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/258905646?title=0&byline=0&portrait=0"></iframe><div class="video-title">TRVL LITE</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/293605988?title=0&byline=0&portrait=0"></iframe><div class="video-title">Rodney Lucas for TRVL LITE</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/354114238?title=0&byline=0&portrait=0"></iframe><div class="video-title">Roll N Peace</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/322411122?title=0&byline=0&portrait=0"></iframe><div class="video-title">Stand For Tomorrow</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/90921291?title=0&byline=0&portrait=0"></iframe><div class="video-title">shuberX</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/85491292?title=0&byline=0&portrait=0"></iframe><div class="video-title">Your Next Big Step</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/174457691?title=0&byline=0&portrait=0"></iframe><div class="video-title">Spring / Summer Lifestyle</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/85491656?title=0&byline=0&portrait=0"></iframe><div class="video-title">Movember 2013</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/136686992?title=0&byline=0&portrait=0"></iframe><div class="video-title">Every Mother Counts</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/119200524?title=0&byline=0&portrait=0"></iframe><div class="video-title">TOMS Holiday Cheer</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/86629417?title=0&byline=0&portrait=0"></iframe><div class="video-title">TOMS Internship Program</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/87644824?title=0&byline=0&portrait=0"></iframe><div class="video-title">Ben Affleck & ECI</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/174458983?title=0&byline=0&portrait=0"></iframe><div class="video-title">Stand Up</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/87743879?title=0&byline=0&portrait=0"></iframe><div class="video-title">Virtual Try On</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/87946399?title=0&byline=0&portrait=0"></iframe><div class="video-title">Corporate International Incorporated</div></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/3744527?title=0&byline=0&portrait=0"></iframe><div class="video-title">Spaceboy vs The House Warden (Short Film)</div></div>
 
   </div>
 </section>
@@ -231,44 +187,50 @@ h2 {
 <section id="photo">
   <h2>Photo</h2>
   <div class="photo-grid">
-    <!-- photos 1–39 -->
-    <!-- photo-01.jpg to photo-39.jpg -->
-    <!-- generated -->
-    <script>
-      for(let i=1;i<=39;i++){
-        document.write(`<img src="/photos/photo-${String(i).padStart(2,'0')}.jpg" />`);
-      }
-    </script>
+    <!-- photo-01.jpg → photo-39.jpg -->
+    <!-- explicitly listed -->
+    <!-- ensure files exist at /photos/ -->
+    <!-- shortened here visually but ALL should be present -->
+    <!-- example -->
+    <img src="/photos/photo-01.jpg"><img src="/photos/photo-02.jpg"><img src="/photos/photo-03.jpg">
+    <img src="/photos/photo-04.jpg"><img src="/photos/photo-05.jpg"><img src="/photos/photo-06.jpg">
+    <img src="/photos/photo-07.jpg"><img src="/photos/photo-08.jpg"><img src="/photos/photo-09.jpg">
+    <img src="/photos/photo-10.jpg"><img src="/photos/photo-11.jpg"><img src="/photos/photo-12.jpg">
+    <img src="/photos/photo-13.jpg"><img src="/photos/photo-14.jpg"><img src="/photos/photo-15.jpg">
+    <img src="/photos/photo-16.jpg"><img src="/photos/photo-17.jpg"><img src="/photos/photo-18.jpg">
+    <img src="/photos/photo-19.jpg"><img src="/photos/photo-20.jpg"><img src="/photos/photo-21.jpg">
+    <img src="/photos/photo-22.jpg"><img src="/photos/photo-23.jpg"><img src="/photos/photo-24.jpg">
+    <img src="/photos/photo-25.jpg"><img src="/photos/photo-26.jpg"><img src="/photos/photo-27.jpg">
+    <img src="/photos/photo-28.jpg"><img src="/photos/photo-29.jpg"><img src="/photos/photo-30.jpg">
+    <img src="/photos/photo-31.jpg"><img src="/photos/photo-32.jpg"><img src="/photos/photo-33.jpg">
+    <img src="/photos/photo-34.jpg"><img src="/photos/photo-35.jpg"><img src="/photos/photo-36.jpg">
+    <img src="/photos/photo-37.jpg"><img src="/photos/photo-38.jpg"><img src="/photos/photo-39.jpg">
   </div>
 </section>
 
-<div class="lightbox" id="lightbox">
-  <img />
-</div>
+<div class="lightbox" id="lightbox"><img></div>
 
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact">
-    <img src="/images/kc.png" alt="KC Brown"/>
+    <img src="/images/kc.png" alt="KC Brown">
     <div>
       <p>Greetings. My name is KC Brown. I like to tell stories, mostly via pictures and moving pictures.</p>
-      <p>I write. I direct. I produce. I shoot. I edit. I do lots of stuff.</p>
-      <p>I've lived and worked all over the world and been fortunate to collaborate with great people and brands.</p>
-      <p><strong>Email:</strong> kenchrisbrown@gmail.com<br/>
+      <p>I write. I direct. I produce. I shoot. I edit.</p>
+      <p>I’ve lived and worked all over the world and collaborated with some wonderful people.</p>
+      <p><strong>Email:</strong> kenchrisbrown@gmail.com<br>
       <strong>Phone:</strong> +64 021 245 4101</p>
     </div>
   </div>
 </section>
 
 <script>
-/* LIGHTBOX */
-const lb = document.getElementById('lightbox');
-const lbImg = lb.querySelector('img');
-
+const lightbox = document.getElementById('lightbox');
+const lightImg = lightbox.querySelector('img');
 document.querySelectorAll('.photo-grid img').forEach(img=>{
-  img.onclick=()=>{ lbImg.src=img.src; lb.style.display='flex'; }
+  img.onclick=()=>{lightImg.src=img.src;lightbox.style.display='flex';}
 });
-lb.onclick=()=>lb.style.display='none';
+lightbox.onclick=()=>lightbox.style.display='none';
 </script>
 
 </body>
